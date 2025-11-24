@@ -1,3 +1,4 @@
+//Estrutura Sequencial
 #include <stdio.h>
 
 int main()
