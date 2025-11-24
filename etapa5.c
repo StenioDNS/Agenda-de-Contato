@@ -10,12 +10,12 @@ typedef struct {
 
 Contato agenda[MAX_CONTATOS];
 int totalContatos = 0;
-void adicionarContato() {
+void adicionarContato() { // Função para adicionar um novo contato à agenda
     if (totalContatos >= MAX_CONTATOS) {
         printf("\nAgenda cheia! Não é possível adicionar mais contatos.\n");
         return;
     }
-
+    // Solicita dados do usuário e armazena na agenda
     printf("\n---- CADASTRAR CONTATO ----\n");
     printf("Nome: ");
     scanf("%s", agenda[totalContatos].nome);
@@ -26,17 +26,17 @@ void adicionarContato() {
     printf("Telefone: ");
     scanf("%s", agenda[totalContatos].telefone);
 
-    totalContatos++;
+    totalContatos++; // Atualiza contagem de contatos
 
     printf("\nContato cadastrado com sucesso!\n");
 }
-
+    // Função para listar todos os contatos
 void listarContatos() {
     if (totalContatos == 0) {
         printf("\nNenhum contato cadastrado.\n");
         return;
     }
-
+    // Percorre a agenda e exibe cada contato
     printf("\n---- LISTA DE CONTATOS ----\n");
 
     for (int i = 0; i < totalContatos; i++) {
@@ -46,12 +46,12 @@ void listarContatos() {
         printf("Telefone: %s\n", agenda[i].telefone);
     }
 }
-
+    // Função para buscar um contato pelo nome
 void buscarContato() {
     char nomeBusca[50];
     printf("\nDigite o nome do contato que deseja buscar: ");
     scanf("%s", nomeBusca);
-
+    // Compara o nome buscado com cada contato da agenda
     for (int i = 0; i < totalContatos; i++) {
         if (strcmp(nomeBusca, agenda[i].nome) == 0) {
             printf("\n---- CONTATO ENCONTRADO ----\n");
@@ -64,7 +64,7 @@ void buscarContato() {
 
     printf("\nContato não encontrado!\n");
 }
-
+    // Função para remover um contato pelo nome
 void removerContato() {
     char nomeRemove[50];
     printf("\nDigite o nome do contato que deseja remover: ");
